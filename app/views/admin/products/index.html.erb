@@ -1,0 +1,29 @@
+<div class="container">
+<h1>All Products <%= link_to "Create new", new_product_path, class: 'btn btn-default' %></h1>
+<% unless flash[:notice].blank? %>
+<div class="alert alert-sucess">
+  <p><%= flash[:notice] %></p>
+</div>
+<% end %>
+
+</div>
+    
+<div class="container">
+   <%= count_for @products, 'Total' %>
+<br>
+    <table style="width: auto;" class = "table table-condensed">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Seller</th>
+          <th>Category</th>
+          <th>Created At</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+       <%= render @products %>
+     </tbody>
+    </table>
+</div>

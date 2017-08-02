@@ -1,0 +1,34 @@
+<nav class="navbar navbar-default">
+  <div class="navbar-header">
+    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href="#" class="navbar-brand">RoR Demo</a>
+  </div>
+
+  <div id="navbarCollapse" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li class="<%= 'active' if params[:action] == 'index' %>"><%= link_to 'Home', root_path %></li>
+      <li class="<%= 'active' if params[:action] == 'products' %>"><%= link_to 'Products', products_path %></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% unless logged_in? %>
+        <li><%= link_to 'Login', new_session_path %></li>
+        <li><%= link_to 'Register', new_user_path %></li>
+      <% else %>
+        <li class="dropdown">
+          <a data-toggle="dropdown" class="dropdown-toggle" href="#">Logged in as: <%= current_user.name %> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <% if current_user.admin? %>
+              <li><%= link_to 'Dashboard', admin_dashboard_path %></li>
+            <% end %>
+            <li><%= link_to 'Logout', session_path, method: :delete %></li>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

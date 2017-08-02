@@ -1,0 +1,43 @@
+<style>
+  .active {
+    background: red;
+  }
+</style>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ror3Demo | Admin</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-default">
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Back to site', root_path %></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#">Logged in as: <%= current_user.name %> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Dashboard', admin_dashboard_path %></li>
+                <li><%= link_to 'Logout', session_path, method: :delete %></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <%= yield %>
+    </div>
+  </body>
+</html>

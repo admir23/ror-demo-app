@@ -1,0 +1,19 @@
+<h1>All Categories <%= link_to "Create a new category", new_category_path, class: "btn btn-default" %>
+</h1>
+<br>
+
+<div class="container">
+<table class="table table-condensed" style="width: auto;">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @categories %>
+  </tbody>
+</table>
+</div>

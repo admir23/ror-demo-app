@@ -1,0 +1,28 @@
+<% if current_user.admin? %>
+  <%= form_for @product do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, class: 'form-control' %>
+  <%= error_for :name, @product.errors %>
+
+  <br>
+  <%= form.label :price %>
+  <%= form.text_field :price, class: 'form-control' %>
+  <%= error_for :price, @product.errors %>
+
+  <br>
+  <%= form.label :description, 'Description (optional)' %>
+  <%= form.text_area :description, class: 'form-control' %>
+  <%= error_for :description, @product.errors %>
+
+  <br>
+  <%= form.label :seller_id %>
+  <%= form.collection_select :seller_id, Seller.all, :id, :name, { prompt: 'Choose seller' }, class: 'form-control' %>
+  <%= error_for :seller, @product.errors %>
+  <br>
+  <%= form.label :category_id %>
+  <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: 'Choose category' }, class: 'form-control' %>
+  <%= error_for :category, @product.errors %>
+  <br>
+  <%= form.submit params[:action] == 'new' ? 'Save' : 'Update', class: 'btn btn-block btn-default' %>
+  <% end %>
+<%end%>

@@ -1,0 +1,11 @@
+<%= form_for @category do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, class: 'form-control' %>
+  <%= error_for :name, @category.errors %>
+  <br>
+  <%= form.label :description, 'Description (optional)' %>
+  <%= form.text_area :description, class: 'form-control' %>
+  <%= error_for :description, @category.errors %>
+  <br>
+  <%= form.submit params[:action] == 'new' ? 'Save' : 'Update', class: 'btn btn-block btn-default' %>
+<% end %>

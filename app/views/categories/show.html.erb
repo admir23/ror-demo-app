@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3><%= @category.name %></h3>
+        <p><%= @category.description %></p>
+        <p><%= link_to '<i class="glyphicon glyphicon-edit"></i> Edit'.html_safe, edit_category_path(@category), class: 'btn btn-primary' %> <%= link_to '<i class="glyphicon glyphicon-trash"></i> Delete'.html_safe, category_path(@category), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger' %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Seller</th>
+      <th>Category</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @category.products %>
+  </tbody>
+</table>
+

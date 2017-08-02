@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <div class="caption">
+        <p><strong>Name:</strong></p>
+        <h2><%= @product.name %></h2>
+         <p><strong>Price:</strong></p>
+         <p><%= @product.price %></p>
+         <p><strong>Description:</strong></p>
+         <p><%= @product.description %></p>
+      <% if current_user.admin? %>
+        <p><%= link_to '<i class="glyphicon glyphicon-edit"></i> Edit'.html_safe, edit_product_path(@product), class: 'btn btn-primary' %> <%= link_to '<i class="glyphicon glyphicon-trash"></i> Delete'.html_safe, product_path(@product), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger' %></p>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

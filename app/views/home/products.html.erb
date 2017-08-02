@@ -1,0 +1,26 @@
+<h1>All Products</h1>
+<!-- h2>Count: <%= @products.count %></h2> -->
+
+<br>
+<table style="width: auto;" class = "table table-condensed">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td class = "col-md-1"><%= product.id %></td>
+        <td class = "col-md-6"><%= product.name %></td>
+        <td class = "col-md-2"><%= product.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div> 
+</div>
+</div>

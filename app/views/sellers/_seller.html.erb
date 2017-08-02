@@ -1,0 +1,7 @@
+<tr>
+	<td class = "col-md-1"><%= seller.id %></td>
+	<td class = "col-md-6"><%= link_to  seller.name, seller_path(seller) %></td>
+	<td class = "col-md-2"><%= seller.rating %></td>
+	<td><%= link_to '<i class="glyphicon glyphicon-edit"></i> Edit'.html_safe, edit_seller_path(seller), class: 'btn btn-primary' %></td>
+	<td><%= link_to '<i class="glyphicon glyphicon-trash"></i> Delete'.html_safe, seller_path(seller), method: :delete, data:{confirm: "Are you sure?"}, class:'btn btn-danger' %></td>
+</tr>

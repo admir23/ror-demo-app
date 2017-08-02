@@ -1,0 +1,18 @@
+<h1>All Sellers <%= link_to "Create a new seller", new_seller_path, class: "btn btn-default"%></h1>
+<br>
+
+<div class="container">
+<table class="table table-condensed" style="width: auto;">
+	<thead>
+		<tr>
+		    <th>Id</th>
+			<th>Name</th>
+			<th>Rating</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render @sellers %>
+	</tbody>
+</table>
+</div>

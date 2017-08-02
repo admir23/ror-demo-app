@@ -1,0 +1,11 @@
+<tr>
+  <td class="col-md-1"><%= category.id %></td>
+  <td class="col-md-3"><%= link_to category.name, category_path(category) %></td>
+  <td class="col-md-6"><%= category.description %></td>
+  <td><%= link_to '<i class="glyphicon glyphicon-edit"></i> Edit'.html_safe, edit_category_path(category), class: 'btn btn-primary' %></td>
+  <td><%= link_to '<i class="glyphicon glyphicon-trash"></i> Delete'.html_safe, category_path(category), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger' %></td>
+
+ </tr>
+
+
+ 
